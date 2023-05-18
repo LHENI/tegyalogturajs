@@ -16,9 +16,10 @@ window.addEventListener('load', () => {
 });
 
 function init() {
+    if(doc.calcButton){
     doc.calcButton.addEventListener('click', () => {
         startCalc();
-    });
+    });}
 }
 
 function startCalc() {
@@ -39,4 +40,14 @@ function getUnsuccessCount(competitor, reached) {
 function getUnsuccessPercent(competitor, unsuccessful) {
     let res = unsuccessful / competitor * 100;
     return res;
+}
+
+function checkInput(input) {
+    let minta = /^[1-9]+$/ ;
+    let inputStr = String(input)
+    if (input.match(minta)) {
+        return true;
+    }else{
+        return false;
+    }
 }
